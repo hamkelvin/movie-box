@@ -34,13 +34,15 @@ function App() {
                 query: searchKey
             }
         })
-
+const mov=data.results
+const mymove=mov.slice(0,10);
         console.log(data.results[0])
-        setMovies(data.results)
-        setMovie(data.results[0])
+        console.log("data",mymove)
+        setMovies(mymove)
+        setMovie(mymove[0])
 
-        if (data.results.length) {
-            await fetchMovie(data.results[0].id)
+        if (mymove.length) {
+            await fetchMovie(mymove[0].id)
         }
     }
 
